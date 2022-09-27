@@ -17,6 +17,7 @@ package sentry
 import (
 	"fmt"
 	"path/filepath"
+	"github.com/baskar-natarajan/pulumi-provider-sentry/provider/pkg/version"
 
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
@@ -45,7 +46,7 @@ func preConfigureCallback(vars resource.PropertyMap, c shim.ResourceConfig) erro
 // Provider returns additional overlaid schema and metadata associated with the provider..
 func Provider() tfbridge.ProviderInfo {
 	// Instantiate the Terraform provider
-	p := shimv2.NewProvider(sentry.Provider())
+	p := shimv2.NewProvider(sentry.NewProvider("0.9.4")())
 
 	// Create a Pulumi provider mapping
 	prov := tfbridge.ProviderInfo{
@@ -79,7 +80,7 @@ func Provider() tfbridge.ProviderInfo {
 		Repository: "https://github.com/baskar-natarajan/pulumi-provider-sentry",
 		// The GitHub Org for the provider - defaults to `terraform-providers`. Note that this
 		// should match the TF provider module's require directive, not any replace directives.
-		GitHubOrg: "",
+		GitHubOrg: "sentry",
 		Config:    map[string]*tfbridge.SchemaInfo{
 			// Add any required configuration here, or remove the example below if
 			// no additional points are required.
@@ -104,11 +105,33 @@ func Provider() tfbridge.ProviderInfo {
 			// 		"tags": {Type: tfbridge.MakeType(mainPkg, "Tags")},
 			// 	},
 			// },
+			"sentry_dashboard": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Dashboard")},
+			"sentry_issue_alert":      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "IssueAlert")},
+			"sentry_key":      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Key")},
+			"sentry_metric_alert":      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "MetricAlert")},
+			"sentry_organization":      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Organization")},
+            "sentry_plugin":      {
+                Tok: tfbridge.MakeResource(mainPkg, mainMod, "Plugin"),
+                Fields: map[string]*tfbridge.SchemaInfo{
+                        "plugin": {
+                            CSharpName: "SentryPlugin",
+                        },
+                    },
+            },
+			"sentry_project":      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Project")},
+			"sentry_rule":      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Rule")},
+			"sentry_team":      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Team")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			// Map each resource in the Terraform provider to a Pulumi function. An example
 			// is below.
 			// "aws_ami": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAmi")},
+			"sentry_dashboard":      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getDashboard")},
+			"sentry_issue_alert":      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIssueAlert")},
+			"sentry_key":      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getKey")},
+			"sentry_metric_alert":      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getMetricAlert")},
+			"sentry_organization":      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrganization")},
+			"sentry_team":      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getTeam")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
