@@ -1,0 +1,3 @@
+name: sentry
+description: Manage Sentry using Pulumi
+runtime: dotnet
