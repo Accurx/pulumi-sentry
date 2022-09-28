@@ -4,37 +4,55 @@ The Sentry Resource Provider lets you manage [Sentry](https://sentry.io/welcome/
 
 ## Installing
 
-This package is available for several languages/platforms:
+This package is available for dotnet:
 
-### Node.js (JavaScript/TypeScript)
+[//]: # (### Node.js &#40;JavaScript/TypeScript&#41;)
 
-To use from JavaScript or TypeScript in Node.js, install using either `npm`:
+[//]: # ()
+[//]: # (To use from JavaScript or TypeScript in Node.js, install using either `npm`:)
 
-```bash
-npm install @pulumi/sentry
-```
+[//]: # ()
+[//]: # (```bash)
 
-or `yarn`:
+[//]: # (npm install @pulumi/sentry)
 
-```bash
-yarn add @pulumi/sentry
-```
+[//]: # (```)
 
-### Python
+[//]: # ()
+[//]: # (or `yarn`:)
 
-To use from Python, install using `pip`:
+[//]: # ()
+[//]: # (```bash)
 
-```bash
-pip install pulumi_sentry
-```
+[//]: # (yarn add @pulumi/sentry)
 
-### Go
+[//]: # (```)
 
-To use from Go, use `go get` to grab the latest version of the library:
+[//]: # ()
+[//]: # (### Python)
 
-```bash
-go get github.com/pulumi/pulumi-sentry/sdk/go/...
-```
+[//]: # ()
+[//]: # (To use from Python, install using `pip`:)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (pip install pulumi_sentry)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### Go)
+
+[//]: # ()
+[//]: # (To use from Go, use `go get` to grab the latest version of the library:)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (go get github.com/pulumi/pulumi-sentry/sdk/go/...)
+
+[//]: # (```)
 
 ### .NET
 
