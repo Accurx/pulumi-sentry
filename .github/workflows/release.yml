@@ -129,7 +129,7 @@ jobs:
 #          - nodejs
 #          - python
           - dotnet
-          - go
+#          - go
         nodeversion:
           - 14.x
         pythonversion:
