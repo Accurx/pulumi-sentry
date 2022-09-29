@@ -1,7 +1,7 @@
 PROJECT_NAME := sentry Package
 
 SHELL            := /bin/bash
-PACK             := provider-sentry
+PACK             := sentry
 ORG              := baskar-natarajan
 PROJECT          := github.com/${ORG}/pulumi-${PACK}
 NODE_MODULE_NAME := @pulumi/${PACK}

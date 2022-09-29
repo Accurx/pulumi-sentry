@@ -17,7 +17,7 @@ package sentry
 import (
 	"fmt"
 	"path/filepath"
-	"github.com/baskar-natarajan/pulumi-provider-sentry/provider/pkg/version"
+	"github.com/baskar-natarajan/pulumi-sentry/provider/pkg/version"
 
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
@@ -77,7 +77,7 @@ func Provider() tfbridge.ProviderInfo {
 		Keywords:   []string{"pulumi", "sentry", "category/cloud"},
 		License:    "Apache-2.0",
 		Homepage:   "https://www.pulumi.com",
-		Repository: "https://github.com/baskar-natarajan/pulumi-provider-sentry",
+		Repository: "https://github.com/baskar-natarajan/pulumi-sentry",
 		// The GitHub Org for the provider - defaults to `terraform-providers`. Note that this
 		// should match the TF provider module's require directive, not any replace directives.
 		GitHubOrg: "sentry",

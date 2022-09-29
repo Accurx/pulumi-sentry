@@ -48,7 +48,7 @@ setup(name='pulumi_sentry',
       keywords='pulumi sentry category/cloud',
       url='https://www.pulumi.com',
       project_urls={
-          'Repository': 'https://github.com/baskar-natarajan/pulumi-provider-sentry'
+          'Repository': 'https://github.com/baskar-natarajan/pulumi-sentry'
       },
       license='Apache-2.0',
       packages=find_packages(),

@@ -1,4 +1,4 @@
-module github.com/baskar-natarajan/pulumi-provider-sentry/provider
+module github.com/baskar-natarajan/pulumi-sentry/provider
 
 go 1.18
 
