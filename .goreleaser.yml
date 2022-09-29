@@ -5,7 +5,7 @@ before:
   hooks:
     - make tfgen
 builds:
-  - binary: pulumi-resource-sentry
+  - binary: pulumi-resource-provider-sentry
     dir: provider
     env:
       - CGO_ENABLED=0
@@ -19,7 +19,7 @@ builds:
     ldflags:
       # The line below MUST align with the module in current provider/go.mod
       - -X github.com/baskar-natarajan/pulumi-provider-sentry/provider/pkg/version.Version={{.Tag }}
-    main: ./cmd/pulumi-resource-sentry/
+    main: ./cmd/pulumi-resource-provider-sentry/
 changelog:
   skip: true
 release:
