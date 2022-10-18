@@ -1,6 +1,6 @@
 # Sentry Resource Provider
 
-The Sentry Resource Provider lets you manage [Sentry](https://sentry.io/welcome/) resources.
+The Sentry Resource Provider lets you manage [Sentry](https://sentry.io/welcome/) resources in Pulumi.
 
 ## Installing
 
